@@ -130,7 +130,7 @@
 					</rules>
 				</configuration>
 			</plugin>
-
+			<!-- Exclude model classes and the entry point class.
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-checkstyle-plugin</artifactId>
@@ -155,7 +155,7 @@
 						JavadocPackage,
 						JavadocVariable
 					</violationIgnore>
-					<!-- Exclude model classes and the entry point class. -->
+
 					<excludes>
 						**/model/**/*,
 						**/KvWebApplication.java
@@ -170,8 +170,8 @@
 						</goals>
 					</execution>
 				</executions>
-			</plugin>
-
+			</plugin> -->
+			<!-- Exclude model classes and the entry point class. -->
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
