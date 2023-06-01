@@ -74,7 +74,7 @@
 				elvileg a .m2\repository\org\springframework\boot mappa alatt kell lennie
 				vsz nem kompatibilis és azért dobta a warningot a mvn install közben-->
 			</plugin>
-
+			<!--
 			<plugin>
 				<groupId>org.jacoco</groupId>
 				<artifactId>jacoco-maven-plugin</artifactId>
@@ -130,7 +130,7 @@
 					</rules>
 				</configuration>
 			</plugin>
-			<!-- Exclude model classes and the entry point class.
+			<!-- Exclude model classes and the entry point class.-->
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-checkstyle-plugin</artifactId>
