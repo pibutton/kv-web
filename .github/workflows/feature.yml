@@ -30,15 +30,15 @@ jobs:
       - name: Build and publish with Maven
         run: |
           # Versioning setup
-          version_prefix=`mvn help:evaluate -Dexpression=project.version --quiet -DforceStdout --file kv-web/pom.xml | awk -F. '{print $1"."$2}'`
+          version_prefix=`mvn help:evaluate -Dexpression=project.version --quiet -DforceStdout --file pom.xml | awk -F. '{print $1"."$2}'`
           version="$version_prefix.${{github.run_number}}-$GITHUB_SHA"
           echo "Setting artifact version to $version"
           # Push version to env
           echo "ARTIFACT_VERSION=$version" >> $GITHUB_ENV
           # Overwrite local artifact version
-          mvn -B versions:set -DnewVersion="$version" --file kv-web/pom.xml
-          mvn -B deploy --file kv-web/pom.xml
-          cp "kv-web/target/kv-web-${version}.jar" "kv-web/target/kv-web.jar"
+          mvn -B versions:set -DnewVersion="$version" --file pom.xml
+          mvn -B deploy --file pom.xml
+          cp "target/kv-web-${version}.jar" "target/kv-web.jar"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Log in to the Container registry
