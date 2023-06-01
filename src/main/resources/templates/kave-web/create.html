@@ -1,0 +1,91 @@
+<!DOCTYPE HTML>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <title>Kávé létrehozás</title>
+
+  <link rel="stylesheet"
+        th:href="@{/webjars/bootstrap/5.1.3/css/bootstrap.min.css}"/>
+  <script th:src="@{/webjars/bootstrap/5.1.3/js/bootstrap.min.js}"></script>
+</head>
+<body>
+
+<div class="container">
+
+  <h3 class="pt-5">Kávé létrehozás</h3>
+
+  <div class="row">
+    <div class="col-md-4 mt-5">
+      <form method="post"
+            th:action="@{/kave-web/create}">
+        <div class="form-group">
+          <label for="name" id=name>Kávé létrehozás</label>
+        </div>
+        <div class="form-group">
+          <label for="marka">Márka</label>
+          <input type="text"
+                 id="marka"
+                 th:name="marka"
+                 class="form-control"/>
+        </div>
+        <div class="form-group">
+          <label for="eredet">Eredet</label>
+          <input type="text"
+                 id="eredet"
+                 th:name="eredet"
+                 class="form-control"/>
+        </div>
+        <div class="form-group">
+          <label for="fajta">Fajta</label>
+          <input type="text"
+                 id="fajta"
+                 th:name="fajta"
+                 class="form-control"/>
+        </div>
+        <div class="form-group">
+          <label for="savassag">Savasság</label>
+          <input type="text"
+                 id="savassag"
+                 th:name="savassag"
+                 class="form-control"/>
+        </div>
+        <div class="form-group">
+          <label for="kiszereles">Kiszerelés</label>
+          <input type="text"
+                 id="kiszereles"
+                 th:name="kiszereles"
+                 class="form-control"/>
+        </div>
+
+        <div class="form-group">
+          <label for="Porkoles">Pörkölés módja:</label>
+          <select name="porkoles" id="porkoles">
+            <option value="VILAGOS">Világos</option>
+            <option value="KOZEPES">Közepes</option>
+            <option value="SOTET">Sötét</option>
+          </select>
+        </div>
+
+
+        <button class="btn btn-primary pt-2"
+                type="submit">Létrehoz
+        </button>
+        <a th:href="@{/kave-web}"
+           class="btn btn-secondary pt-2"
+           type="submit">Vissza a listához</a>
+      </form>
+    </div>
+  </div>
+
+</div>
+
+<script>
+
+</script>
+
+</body>
+</html>

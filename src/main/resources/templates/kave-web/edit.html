@@ -1,0 +1,100 @@
+<!DOCTYPE HTML>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>Product Creating form</title>
+
+    <link rel="stylesheet"
+          th:href="@{/webjars/bootstrap/5.1.3/css/bootstrap.min.css}"/>
+    <script th:src="@{/webjars/bootstrap/5.1.3/js/bootstrap.min.js}"></script>
+</head>
+<body>
+
+<div class="container">
+
+    <div class="row">
+        <div class="col-md-4 mt-5">
+            <form method="post"
+                  th:action="@{/kave-web/update}">
+                <div class="form-group">
+                    <label for="name" id=name>Termék modósító adatlap</label>
+                </div>
+                <div class="form-group">
+                    <label for="id">ID</label>
+                    <input type="text"
+                           id="id"
+                           name="id"
+                           readonly
+                           class="form-control"
+                           th:value="${kave.id}"/>
+                </div>
+                <div class="form-group">
+                    <label for="marka">Márka</label>
+                    <input type="text"
+                           id="marka"
+                           name="marka"
+                           class="form-control"
+                           th:value="${kave.marka}"/>
+                </div>
+                <div class="form-group">
+                    <label for="eredet">Eredet</label>
+                    <input type="text"
+                           id="eredet"
+                           name="eredet"
+                           class="form-control"
+                           th:value="${kave.eredet}"/>
+                </div>
+                <div class="form-group">
+                    <label for="fajta">Fajta</label>
+                    <input type="text"
+                           id="fajta"
+                           name="fajta"
+                           class="form-control"
+                           th:value="${kave.fajta}"/>
+                </div>
+                <div class="form-group">
+                    <label for="savassag">Savasság</label>
+                    <input type="text"
+                           id="savassag"
+                           name="savassag"
+                           class="form-control"
+                           th:value="${kave.savassag}"/>
+                </div>
+                <div class="form-group">
+                    <label for="kiszereles">Kiszerelés</label>
+                    <input type="text"
+                           id="kiszereles"
+                           name="kiszereles"
+                           class="form-control"
+                           th:value="${kave.kiszereles}"/>
+                </div>
+                <div class="form-group">
+                    <label for="porkoles">Pörkölés</label>
+                    <input type="text"
+                           id="porkoles"
+                           name="porkoles"
+                           class="form-control"
+                           th:value="${kave.porkoles}"/>
+                </div>
+                <button class="btn btn-primary"
+                        type="submit">Módosít
+                </button>
+                <a th:href="@{/kave-web}"
+                   class="btn btn-secondary"
+                   type="submit">Vissza a listához</a>
+            </form>
+        </div>
+    </div>
+
+</div>
+
+<script>
+
+</script>
+
+</body>
+</html>

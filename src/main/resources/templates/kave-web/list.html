@@ -1,0 +1,80 @@
+<!DOCTYPE HTML>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>Kávék listája</title>
+
+    <link rel="stylesheet"
+          th:href="@{/webjars/bootstrap/5.1.3/css/bootstrap.min.css}"/>
+    <script th:src="@{/webjars/bootstrap/5.1.3/js/bootstrap.min.js}"></script>
+</head>
+<body>
+
+<div th:insert="~{shared/navBar :: navbar}"></div>
+
+<div class="container h-100">
+
+    <div class="row h-100">
+        <h3 class="text-center pt-5">Üdvözlöm a Kávék katalógizálására szolgáló alkalmazásunkban!</h3>
+        <div class="col"></div>
+        <div class="col">
+            <img th:src="@{/img/coffee.jpg}" class="img-fluid pt-5" alt="Zsakoska.">
+        </div>
+        <div class="col"></div>
+    </div>
+</div>
+
+<div class="container">
+
+    <h3 class="text-center pt-5">Kávék listája</h3>
+
+    <a th:href="@{'/kave-web/create'}"
+       type="button"
+       class="btn">Új hozzáadása</a>
+
+    <table class="table table-striped pt-5">
+        <caption>Kávék listája</caption>
+        <thread>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Márka</th>
+                <th scope="col">Eredet</th>
+                <th scope="col">Fajta</th>
+                <th scope="col">Savasság</th>
+                <th scope="col">Kiszerelés</th>
+                <th scope="col">Pörkölés</th>
+            </tr>
+        </thread>
+        <tbody>
+        <tr th:each="kave: ${kavek}">
+            <th scope="row"
+                th:text="${kave.id}"></th>
+            <td th:text="${kave.marka}"></td>
+            <td th:text="${kave.eredet}"></td>
+            <td th:text="${kave.fajta}"></td>
+            <td th:text="${kave.savassag}"></td>
+            <td th:text="${kave.kiszereles}"></td>
+            <td th:text="${kave.porkoles}">
+            <td>
+                <a th:href="@{'/kave-web/' + ${kave.id}}"
+                   type="button"
+                   class="btn btn-warning">Szerkesztés</a>
+                <a th:href="@{'/kave-web/' + ${kave.id} + '/delete'}"
+                   type="button"
+                   class="btn btn-danger">Törlés</a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+<script>
+
+</script>
+
+</body>
+</html>
