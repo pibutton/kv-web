@@ -17,12 +17,12 @@
 		<java.version>17</java.version>
 
 		<spring-boot.version>3.0.5</spring-boot.version>
-		<webjars.version>5.1.3</webjars.version>
+		<webjars.version>5.2.3</webjars.version>
 		<jquery.version>3.6.0</jquery.version>
 		<webjars-locator.version>0.42</webjars-locator.version>
 		<jacoco.version>0.8.7</jacoco.version>
-		<coverage.branchLimit>5%</coverage.branchLimit>
-		<coverage.lineLimit>5%</coverage.lineLimit>
+		<coverage.branchLimit>10%</coverage.branchLimit>
+		<coverage.lineLimit>10%</coverage.lineLimit>
 		<coverage.type>BUNDLE</coverage.type>
 	</properties>
 	<dependencies>
@@ -59,6 +59,11 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-context</artifactId>
+			<version>6.0.9</version>
 		</dependency>
 	</dependencies>
 
@@ -169,14 +174,14 @@
 						</goals>
 					</execution>
 				</executions>
-			</plugin> -->
+			</plugin>
 			<!-- Exclude model classes and the entry point class. -->
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
-				<!--<version>${maven-compiler-plugin.version}</version>
-				ide a verziószámot meg se kellene adni, hiszen én a saját projektembe csak megöröklöm....
-				vsz nem kompatibilis és azért dobta a warningot a mvn install közben-->
+				<!-- <version>${maven-compiler-plugin.version}</version> -->
+				<!-- ide a verziószámot meg se kellene adni, hiszen én a saját projektembe csak megöröklöm.... -->
+				<!-- vsz nem kompatibilis és azért dobta a warningot a mvn install közben -->
 				<version>3.11.0</version>
 				<configuration>
 					<source>17</source>
