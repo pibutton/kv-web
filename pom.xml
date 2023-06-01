@@ -130,7 +130,7 @@
 					</rules>
 				</configuration>
 			</plugin>
-			<!-- Exclude model classes and the entry point class.-->
+			Exclude model classes and the entry point class.-->
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-checkstyle-plugin</artifactId>
