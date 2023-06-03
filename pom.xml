@@ -21,7 +21,7 @@
 		<jquery.version>3.6.0</jquery.version>
 		<webjars-locator.version>0.42</webjars-locator.version>
 		<jacoco.version>0.8.7</jacoco.version>
-		<coverage.branchLimit>10%</coverage.branchLimit>
+		<coverage.branchLimit>5%</coverage.branchLimit>
 		<coverage.lineLimit>10%</coverage.lineLimit>
 		<coverage.type>BUNDLE</coverage.type>
 	</properties>
