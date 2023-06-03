@@ -36,7 +36,9 @@ public class DefaultKaveService implements KaveService {
     }
 
     @Override
-    public Kave updateKave(Kave kave) { return kaveRepository.update(kave); }
+    public Kave updateKave(Kave kave) {
+        return kaveRepository.update(kave);
+    }
 
     @Override
     public void deleteKaveById(Long id) {
