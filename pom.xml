@@ -149,7 +149,7 @@
 				<configuration>
 					<consoleOutput>true</consoleOutput>
 					<configLocation>google_checks.xml</configLocation>
-					<violationSeverity>info</violationSeverity>
+					<violationSeverity>warning</violationSeverity>
 					<violationIgnore>
 						Indentation,
 						CustomImportOrder,
