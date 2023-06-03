@@ -174,8 +174,7 @@
 						</goals>
 					</execution>
 				</executions>
-			</plugin>
-			<!-- Exclude model classes and the entry point class. -->
+			</plugin> <!-- Exclude model classes and the entry point class. -->
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
