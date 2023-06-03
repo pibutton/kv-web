@@ -8,6 +8,9 @@ import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 
+/**
+ * Map-based in-memory implementation of {@link Repository}.
+ */
 @org.springframework.stereotype.Repository
 public class InMemoryKaveRepository implements Repository<Kave, Long> {
 

@@ -11,6 +11,9 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 import java.util.Optional;
 
+/**
+ * Controller for the kave-web.
+ */
 @Controller
 @RequestMapping("/kave-web")
 public class KvWebController {
@@ -22,6 +25,13 @@ public class KvWebController {
         this.kaveService = kaveService;
     }
 
+    /**
+     * Shows the kave editor screen.
+     *
+     * @param model the model object to store attributes
+     * @param id the id of the kave to retrieve
+     * @return the name of the edit view to render
+     */
     @GetMapping("/{id}")
     public String getKaveById(Model model, @PathVariable Long id) {
         Optional<Kave> optionalKave = kaveService.retrieveKaveById(id);
@@ -34,6 +44,12 @@ public class KvWebController {
         });
     }
 
+    /**
+     * Shows the kave list screen.
+     *
+     * @param model the model object to store attributes
+     * @return the name of the kave list view to render
+     */
     @GetMapping
     public String getAllKavek(Model model) {
         List<Kave> allKavek = kaveService.retrieveAllKavek();
@@ -41,11 +57,24 @@ public class KvWebController {
         return "kave-web/list";
     }
 
+    /**
+     * Shows the kave creation screen.
+     *
+     * @return the name of the kave creation view to render
+     */
     @GetMapping("/create")
     public String createKave() {
         return "kave-web/create";
     }
 
+    /**
+     * Creates a new kave.
+     * Also navigates back to the editor screen.
+     *
+     * @param model the model object to store attributes
+     * @param kave the kave object to create
+     * @return the name of the edit view to render
+     */
     @PostMapping("/create")
     public String createKave(Model model, Kave kave) {
         Kave ujKave = kaveService.createKave(kave);
@@ -53,6 +82,14 @@ public class KvWebController {
         return "kave-web/edit";
     }
 
+    /**
+     * Updates an existing kave.
+     * Also navigates back to the editor screen.
+     *
+     * @param model the model object to store attributes
+     * @param kave the kave object to update
+     * @return the name of the edit view to render
+     */
     @PostMapping(value = "/update", consumes = MediaType.APPLICATION_FORM_URLENCODED_VALUE)
     public String updateKave(Model model, Kave kave) {
         Kave updatedKave = kaveService.updateKave(kave);
@@ -60,6 +97,14 @@ public class KvWebController {
         return "kave-web/edit";
     }
 
+    /**
+     * Deletes a kave by ID.
+     * Also navigates back to the kave list screen.
+     *
+     * @param model the model object to store attributes
+     * @param id the id of the kave to delete
+     * @return the name of the kave list view to render
+     */
     @GetMapping("/{id}/delete")
     public String deleteKaveById(Model model, @PathVariable Long id) {
         kaveService.deleteKaveById(id);
