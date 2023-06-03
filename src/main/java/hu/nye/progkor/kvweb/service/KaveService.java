@@ -5,6 +5,9 @@ import hu.nye.progkor.kvweb.data.model.Kave;
 import java.util.List;
 import java.util.Optional;
 
+/**
+ * A service kavek-at kezelhessunk a kvweben.
+ */
 public interface KaveService {
 
     Kave createKave(Kave kave);

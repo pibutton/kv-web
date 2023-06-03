@@ -9,9 +9,11 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 import java.util.Optional;
 
-
+/**
+ * Default implementation of {@link KaveService}.
+ */
 @Service
-public class DefaultKaveService implements KaveService  {
+public class DefaultKaveService implements KaveService {
 
     private final Repository<Kave, Long> kaveRepository;
 
@@ -21,7 +23,9 @@ public class DefaultKaveService implements KaveService  {
     }
 
     @Override
-    public Kave createKave(Kave kave) {return kaveRepository.save(kave);}
+    public Kave createKave(Kave kave) {
+        return kaveRepository.save(kave);
+    }
 
     @Override
     public Optional<Kave> retrieveKaveById(Long id) {

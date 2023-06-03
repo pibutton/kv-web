@@ -1,12 +1,8 @@
-name: Feature workflow
+name: Main workflow
 
 on:
   push:
-    branches:
-      - 'feature/**'
-      - 'bugfix/**'
-      - 'hotfix/**'
-      - 'release/**'
+    branches: [ main ]
 
 env:
   DOCKER_REGISTRY: ghcr.io
@@ -31,7 +27,7 @@ jobs:
         run: |
           # Versioning setup
           version_prefix=`mvn help:evaluate -Dexpression=project.version --quiet -DforceStdout --file pom.xml | awk -F. '{print $1"."$2}'`
-          version="$version_prefix.${{github.run_number}}-$GITHUB_SHA"
+          version="$version_prefix.${{github.run_number}}"
           echo "Setting artifact version to $version"
           # Push version to env
           echo "ARTIFACT_VERSION=$version" >> $GITHUB_ENV
