@@ -10,6 +10,9 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 import java.util.Optional;
 
+/**
+ * A REST controller for managing kavek in the kv-web.
+ */
 @RestController
 @RequestMapping("/api/v1/kave")
 public class KvWebRestController {
@@ -21,6 +24,12 @@ public class KvWebRestController {
         this.kaveService = kaveService;
     }
 
+    /**
+     * Returns a kave with the given id.
+     *
+     * @param id the id of the kave to retrieve
+     * @return a kave objektumot
+     */
     @GetMapping("/{id}")
     public ResponseEntity<Kave> getKaveById(@PathVariable Long id) {
         Optional<Kave> kave = kaveService.retrieveKaveById(id);

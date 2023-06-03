@@ -23,7 +23,9 @@ public class DefaultKaveService implements KaveService {
     }
 
     @Override
-    public Kave createKave(Kave kave) { return kaveRepository.save(kave); }
+    public Kave createKave(Kave kave) {
+        return kaveRepository.save(kave);
+    }
 
     @Override
     public Optional<Kave> retrieveKaveById(Long id) {
